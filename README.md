@@ -12,6 +12,7 @@
 .
 ├── html/               <--   원본 키워드 검색 리스트 html 파일
 ├── list/               <--   newsID html 저장된 중간단계 파일
+├── list_with_text/     <--   언론사.카테고리.index.txt 형식의 제목,본문 텍스트 추출 파일
 ├── list_with_title/    <--   언론사.카테고리.index.html 형식의 팝업내용 html 파일
 ├── README.md
 ├── all-in-one.md       <--   온라인에서 볼 수 있는 통짜 파일
