@@ -3,8 +3,8 @@
 
 ## 사용법
 
-- 통짜 파일을 온라인에서 보려면 [all-in-one.md](all-in-one.md)
-
+- 통짜 파일을 보려면 [all-in-one.txt](all-in-one.txt?raw=true)
+- 이 모든걸 다운받으려면 [archive/v1.0.zip](https://github.com/heshed/min_sister/archive/v1.0.zip)
 
 ## 디렉토리 구조
 
