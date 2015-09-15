@@ -21,9 +21,6 @@ class MinSisterTest(unittest.TestCase):
     def test_min_keyword(self):
         ''' make wget command string
         '''
-        '''
-        :return:
-        '''
         rset = set()
 
         for i in range(1, 145):
@@ -79,12 +76,23 @@ class MinSisterTest(unittest.TestCase):
 
         for key, li in result_map.items():
             for idx, item in enumerate(li):
+                # create html
                 file_name = '{0}.{1}.html'.format(key, idx)
                 file_path = os.path.join('list_with_title', file_name)
-                print file_path
+
                 w = open(file_path, 'w')
                 w.write(item['content'])
                 w.close()
+
+                # create text only file
+                text_file_name = '{0}.{1}.txt'.format(key, idx)
+                text_file_path = os.path.join('list_with_text', text_file_name)
+
+                tw = open(text_file_path, 'w')
+                tw.write(item['title']+'\n')
+                for br in item['text']:
+                    tw.write(br+'\n')
+                tw.close()
 
                 all_in_one_content.append('# {0}\n\n'.format(file_name))
                 all_in_one_content.append('- 제목 : `{0}`\n'.format(item['title']))
