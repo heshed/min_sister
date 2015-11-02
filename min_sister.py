@@ -43,6 +43,8 @@ class MinSisterTest(unittest.TestCase):
         lists = [os.path.join('list', i) for i in os.listdir('list')]
         result_map = {}
         for i in lists:
+            # list/01100101.20100122100000966.html
+            date_registered = i.split('/')[1].split('.')[1][:8]
             r = open(i)
             content = r.read()
             r.close()
@@ -62,12 +64,14 @@ class MinSisterTest(unittest.TestCase):
                     'content': content,
                     'title': title,
                     'text': text,
+                    'date': date_registered,
                 })
             else:
                 result_map[key] = [{
                     'content': content,
                     'title': title,
                     'text': text,
+                    'date': date_registered,
                 }]
 
         all_in_one = 'all-in-one.md'
@@ -85,7 +89,7 @@ class MinSisterTest(unittest.TestCase):
                 w.close()
 
                 # create text only file
-                text_file_name = '{0}.{1}.txt'.format(key, idx)
+                text_file_name = '{0}.{1}.{2}.txt'.format(key, idx, item['date'])
                 text_file_path = os.path.join('list_with_text', text_file_name)
 
                 tw = open(text_file_path, 'w')
